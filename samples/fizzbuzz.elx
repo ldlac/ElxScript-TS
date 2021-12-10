@@ -1,0 +1,10 @@
+
+@fizz_buzz = (nums) => nums.map((i) => {
+    @fizz = (output) => ifelse(i % 3 == 0, output + "FIZZ", output),
+    @buzz = (output) => ifelse(i % 5 == 0, output + "BUZZ", output),
+    @final = (output) => output || i
+
+    "" |> fizz |> buzz |> final |> print
+})
+
+fizz_buzz([1..15])

@@ -1,0 +1,23 @@
+@depth = 0
+@horizontal = 0
+
+@direction = ""
+
+(read_file_as_string("samples/advent-2/input.txt")
+.split(/\n/))
+.map((move) => 
+    (move.split(" ")).map((m) => {
+        
+        ((m == "up") && (direction = "depthUp"));
+        ((m == "down") && (direction = "depthDown"));
+        ((m == "forward") && (direction = "horizontal"))
+
+        @isNumber = (((m != "forward") && (m != "up")) && (m != "down"))
+
+        (isNumber && (direction == "depthUp")) && (depth -= (number(m)));
+        (isNumber && (direction == "depthDown")) && (depth += (number(m)));
+        (isNumber && (direction == "horizontal")) && (horizontal += (number(m)))
+    })
+)
+
+print(depth * horizontal)

@@ -1,0 +1,13 @@
+@in = ((a) => { print(a) })
+
+in(1)
+
+1 |> in
+
+@inn = ((a) => { print(a()) })
+
+@f = (() => {1})
+
+inn(f)
+
+f |> inn

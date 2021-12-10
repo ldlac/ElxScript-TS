@@ -1,0 +1,35 @@
+{
+    "name": "elx-language-support",
+    "displayName": "Elx Language Support",
+    "description": "Language Support for Elx",
+    "version": "0.1.1",
+    "publisher": "Elixin Software",
+    "engines": {
+        "vscode": "^1.22.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "elx",
+                "aliases": [
+                    "Elx",
+                    "elx"
+                ],
+                "extensions": [
+                    ".elx"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "elx",
+                "scopeName": "source.elx",
+                "path": "./syntaxes/elx.tmLanguage.json"
+            }
+        ]
+    }
+}

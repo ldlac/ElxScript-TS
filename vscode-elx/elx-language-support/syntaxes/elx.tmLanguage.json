@@ -1,0 +1,78 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "Elx",
+    "patterns": [
+        {
+            "name": "support.function",
+            "match": "(\\b(read_file_as_string|split|map|print)\\b)",
+            "patterns": []
+        },
+        {
+            "name": "comment.line.double-dash",
+            "begin": "//",
+            "end": "\n",
+            "patterns": []
+        },
+        {
+            "name": "string.regexp",
+            "begin": "/",
+            "end": "/",
+            "patterns": []
+        },
+        {
+            "name": "keyword.control",
+            "match": "(\\@|\\=>|\\b(range)\\b)"
+        },
+        {
+            "name": "string.quoted.double",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+                {
+                    "name": "constant.character.escape",
+                    "match": "\\\\."
+                }
+            ]
+        },
+        {
+            "name": "constant.numeric",
+            "match": "[0-9]+[.[0-9]*]*",
+            "patterns": []
+        },
+        { "include": "#types" },
+        { "include": "#integers" },
+        { "include": "#floats" },
+        { "include": "#bools" },
+        { "include": "#operators" },
+        { "include": "#calls" }
+    ],
+    "repository": {
+        "bools": {
+            "name": "constant.language",
+            "match": "\\b(true|false)\\b",
+            "patterns": []
+        },
+        "types": {
+            "name": "storage.type",
+            "match": "((\\.\\.\\.)?\\b(int|float|bool|char|str|any|nil|[A-Z]\\w+)\\b|\\.\\.\\.)\\??",
+            "patterns": []
+        },
+        "operators": {
+            "name": "keyword.operator",
+            "match": "(\\:=|\\=|\\?|!|\\^|\\+\\+|\\+|\\-|\\*|\\/|%|==|!=|<=|>=|=>|<|>|\\&&|\\b(or|and|not)\\b)",
+            "patterns": []
+        },
+        "calls": {
+            "name": "entity.name.function",
+            "match": "\\b(\\w+)(?=\\s*\\()",
+            "patterns": []
+        },
+        "regular-expressions": {
+            "name": "storage.type",
+            "begin": "/",
+            "end": "/",
+            "patterns": []
+        }
+    },
+    "scopeName": "source.elx"
+}

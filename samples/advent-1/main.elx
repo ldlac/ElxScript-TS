@@ -1,0 +1,12 @@
+@larger_measurements = 0
+
+@last_num = 0
+
+(read_file_as_string("samples/advent-1/input.txt")
+.split(/\n/))
+.map((num) => {
+    (num > last_num) && (larger_measurements += 1)
+    last_num = num
+})
+
+print(larger_measurements)

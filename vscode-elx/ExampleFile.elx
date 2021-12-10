@@ -1,0 +1,77 @@
+-- Comment 
+
+---
+Multi
+line 
+Comment
+---
+"Strings with \Escapes"
+r"Raw strings with no \escape"
+if, elif, else, for, while, loop, return
+
+
+--------------------------------------------
+(Also a valid multiline comment)
+Example program: Bad RPG
+--------------------------------------------
+
+Wand :: struct {
+  damage: float = 0.001
+  weigt: string = "rather heavy"
+}
+
+Class :: struct {
+  name:     string
+  height:   int
+
+  weapon: { damage: float, weight: string }
+}
+
+wizard := Class {
+  name :   "gargamel"
+  height: 102
+  
+  weapon: Wand {}
+}
+
+
+
+main :: () -> loop {
+
+  beginning := prompt("you are in a swamp, walk left or right? [y/N] ")
+
+  match beginning lowercase() {
+    | "y" -> print("ok fair")
+    | _   -> print("sure, fine")
+  }
+
+  height := prompt("how tall? [0-9+]")
+
+  wizard height = height to_int()
+
+  print("ok, now again ...\n")
+} 
+
+--------------------------------------------
+(Also a valid multiline comment)
+Example program: Balls
+--------------------------------------------
+
+-- making a lot of balls
+
+
+-- an anonymous structure
+ball := {
+  x: float = 100
+  y: float = 100
+}
+
+-- infinite arrays
+balls: [ball] = []
+
+for i in 0 .. 100 {
+  balls[i] = ball {
+    math random(0, 100)
+    math random(0, 100)
+  }
+}

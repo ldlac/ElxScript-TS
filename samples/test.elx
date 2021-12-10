@@ -1,0 +1,5 @@
+@buzz = ifelse(true, "A", "B")
+
+@fizz = ((a) => { a + "AA" })
+
+buzz |> fizz |> print
